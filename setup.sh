@@ -32,7 +32,7 @@ growpart /dev/mmcblk0 3 ;
 
 resize2fs /dev/mmcblk0p3 ;
 
-pacman -U  --overwrite "*" pkg/* ;
+pacman -U  --overwrite "*" packages/* ;
 
 pacman -Syuu ;
 
