@@ -16,11 +16,11 @@ This repository is for spinning your own SD Image of MOnSieurFPGA, if you choose
 ## Partition Information & Image Creation
 **Partition /dev/loopX using fdisk/cfdisk/gparted with the following options:**
 
-- **Partition 1: 500MB, `exfat`**
+- **Partition 1: 500MB, `fat32`**
 - **Partition 2: 3MB, type `a2`**
 - **Partition 3: Remaining Size, `ext4`**
 
-      sudo mkfs.exfat -n BOOT /dev/loopXp1
+      sudo mkfs.vfat -n BOOT /dev/loopXp1
       sudo mkfs.ext4 /dev/loopXp3
       sudo mount /dev/loopXp1 /mountdir1
       sudo mount /dev/loopXp3 /mountdir2
