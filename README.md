@@ -1,4 +1,4 @@
-# MOnSieurFPGA SD Image Creation
+# MOnSieurFPGA Image Creation
 
 Follow these steps to create an SD Image that will run Arch Linux with MiSTerFPGA binaries. Source files taken from the [**MiSTerArch**](https://github.com/amstan/MiSTerArch) repository.
 
