@@ -2,7 +2,7 @@
 
 cat logo/logo ;
 
-echo "/MiSTer	/media/fat	ciopfs	allow_other,default_permissions,use_ino,attr_timeout=0	0	0" | tee -a /etc/fstab ;
+echo "/MiSTer   /media/fat      ciopfs  allow_other,default_permissions,use_ino,attr_timeout=0  0       0" | tee -a /etc/fstab ;
 
 echo "SystemMaxUse=20M" | tee -a /etc/systemd/journald.conf ;
 
@@ -77,8 +77,4 @@ echo "Finished! Restarting in 2 seconds, have fun!" ;
 sleep 2 ;
 
 reboot
-
-
-
-
 
