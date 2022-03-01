@@ -43,17 +43,22 @@ This repository is for spinning your own SD Image of MOnSieurFPGA, if you choose
 
 After creating an image from source, write the image with [**balena-io/etcher**](https://github.com/balena-io/etcher). Boot the DE10-Nano with your newly created sd card; with a wired internet connection. Follow these steps on your local machine:
 
-> ***Username/Password**:*
-> 
-> 	*Local*: **alarm/alarm** 	*ROOT*: **root/root**
-> 
->  - `ssh alarm@your.device.ip`
->  - `su` 
->  - `./setup.sh`
+**Username/Password**:
+
+**LOCAL:**  alarm/alarm  **ROOT:**  root/root
+      
+    ssh alarm@your.device.ip (use alarm password)
+    su (use root password)
+    ./setup.sh
 
 Follow the prompts from `setup.sh`. Answer yes to all prompts. Once completed, you will see the `menu.rbf` for MiSTerFPGA displayed over an HDMI connection or 15KHz source. Source rom files for the `/media/fat/games` directory from local, attached, or cifs. Now you're playing with power!
 
-Note: `MiSTer` binary and `menu.rbf` are no longer located in `/media/fat`. The `MiSTer` binary is located in `/user/bin` and `menu.rbf` is located in `/boot/`.
+   **Notes:**
+   - **The  `MiSTer`  binary location is  now **`/user/bin`**  and  **`menu.rbf`**  is located in `/boot/`. The `menu.rbf` is also copied to `/media/fat/`.**
+   
+   - **Do not edit files in the `/MiSTer/` directory when the SD card is in your DE10-Nano. Instead, use `/media/fat/` only.**
+   
+   - **Fast USB polling (1000Hz) is enabled by default in `/boot/uboot.txt`.**
 
 ## Licensing
 
