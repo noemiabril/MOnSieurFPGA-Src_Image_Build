@@ -31,6 +31,7 @@ This repository is for spinning your own SD Image of MOnSieurFPGA, if you choose
       wget http://mirror.archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz
       sudo tar xzvpf ArchLinuxARM-armv7-latest.tar.gz -C /mountdir2/
       rm ArchLinuxARM-armv7-latest.tar.gz
+      sudo cp -r fstab /mountdir2/etc/fstab
       sudo cp -r logo /mountdir2/home/alarm/
       sudo cp -r setup.sh /mountdir2/home/alarm/
       sudo cp -r packages /mountdir2/home/alarm/
