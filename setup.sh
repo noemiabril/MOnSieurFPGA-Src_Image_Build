@@ -2,11 +2,11 @@
 
 cat logo/logo ;
 
-echo "/MiSTer   /media/fat      ciopfs  allow_other,default_permissions,use_ino,attr_timeout=0  0       0" | tee -a /etc/fstab ;
+echo "/MiSTer	/media/fat	ciopfs	allow_other,default_permissions,use_ino,attr_timeout=0	0	0" | tee -a /etc/fstab ;
 
 echo "SystemMaxUse=20M" | tee -a /etc/systemd/journald.conf ;
 
-echo "%wheel ALL=(ALL:ALL) NOPASSWD: ALL" | tee -a /etc/sudoers ;
+echo "%wheel ALL=(ALL:ALL) PASSWD: ALL" | tee -a /etc/sudoers ;
 
 echo "[monsieur]" | tee -a /etc/pacman.conf ;
 echo "SigLevel = Optional TrustAll" | tee -a /etc/pacman.conf ;
@@ -38,15 +38,19 @@ pacman -Syuu ;
 
 mkdir -p /media/fat ;
 
+mkdir /media/usb0 ;
+
+mkdir /media/usb1 ;
+
 ciopfs /MiSTer /media/fat ;
 
-pacman -Syu exfat-utils git go-ipfs networkmanager bluez bluez-utils sudo wget unzip bash cifs-utils ;
+pacman -Syu exfat-utils git go-ipfs networkmanager bluez bluez-utils sudo wget unzip bash cifs-utils ntfs-3g imlib2 freetype2 ;
 
 usermod -aG wheel alarm ;
 
 rm -rf /media/fat/* ;
 
-pacman -Sy JTFPGA-MiSTer MiSTer-devel --overwrite "*" ;
+pacman -Sy MiSTer-Devel-Bin MiSTer-Devel-Support MiSTer-Devel-Menu MiSTer-Linux-Addons --overwrite "*" ;
 
 systemctl enable MiSTer ;
 
@@ -77,4 +81,8 @@ echo "Finished! Restarting in 2 seconds, have fun!" ;
 sleep 2 ;
 
 reboot
+
+
+
+
 
